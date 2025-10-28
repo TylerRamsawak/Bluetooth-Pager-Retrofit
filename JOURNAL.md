@@ -30,3 +30,25 @@ https://www.nordicsemi.com/Products/nPM2100
 https://www.monolithicpower.com/en/mp3418.html (kinda big)
   
 
+## 10/28/2025 - Researching Power and Selecting a New BLE Module  
+
+I've done plenty of research and have settled on the nPM2100 pmic from Nordic. It's got features up the wazoo like an i2c fuel gauge, ultra low power, ship mode, and its super tiny. It looks to be more efficient for radio as compared to the MPS pmic.
+Now I need to start thinking about what pager I will use. There are three main types I want to consider: The upright numberic pagers, the elite size pagers, and the micro size pagers. The numeric pagers will be easiest to interface the display or I can replace it with a .91" OLED. The elite pager's display will be difficult to interface but can be replaced with a 16x2 LCD. The micro pager's display can be trivially interfaced and can also be replaced with an i2c OLED. Until I get an actual unit off ebay, I wont think too much about the display technology right now.
+I am changing the BLE module. Adafruit is too expensive at $7 and Raytac documentation sux. Im going with the ublox BMD-330-A-R. its only $3.98 and uses bt v 5.0 instead of 4(?) i think the old raytac module was using.
+I looked into the discharge curve of the duracell AA coppertop battery. Looks promising, I can get about 150 hours at 25mA, so almost 7 days. Since the ublox chip min input is 1.7V, we will use that pmic from nordic.
+Nothing much to show, mainly research.
+![Screenshot 2025-10-28 001332](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjEzNywicHVyIjoiYmxvYl9pZCJ9fQ==--bb873c103b1fb9436b41bb4ab96b19499ab3fe51/Screenshot%202025-10-28%20001332.png)
+![Screenshot 2025-10-28 001424](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjEzNiwicHVyIjoiYmxvYl9pZCJ9fQ==--d0b2073a1d7b92937e9679e9d909a8191612f39f/Screenshot%202025-10-28%20001424.png)
+
+
+Links:
+PMIC:
+https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NPM2100-QEAA-R/26284313
+https://docs.nordicsemi.com/bundle/ps_npm2100/page/keyfeatures_html5.html
+https://www.nordicsemi.com/Products/nPM2100
+SoC:
+https://www.digikey.com/en/products/detail/u-blox/BMD-330-A-R/7902392
+https://content.u-blox.com/sites/default/files/BMD-330_DataSheet_UBX-19033352.pdf
+
+  
+
